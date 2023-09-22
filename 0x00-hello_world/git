@@ -1,6 +1,0 @@
-#!/bin/bash
-echo "input your commit"
-read var
-git add . -u git
-git commit -m "${var}"
-git push
