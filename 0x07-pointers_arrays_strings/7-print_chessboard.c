@@ -2,9 +2,7 @@
 
 /**
  * print_chessboard - prints the chessboard
- * @a: pointer to pieces to print
- *
- * Return: void
+ * @a: two dimension array to print
  */
 void print_chessboard(char (*a)[8])
 {
