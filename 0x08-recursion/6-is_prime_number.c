@@ -1,30 +1,32 @@
 #include "main.h"
-/**
- *comparar - function that returns the power of number
- *@n: original number
- *@y: counter to compare multiplication
- *
- *Return: square root
- */
-int comparar(int n, int y)
-{
-	if (y * y == n)
-	{
-		return (y);
-	}
-	else if (y * y > n)
-	{
-		return (-1);
 
-	}
-	return (comparar(n, y + 1));
-}
+int actual_prime(int n, int i);
+
 /**
-*_sqrt_recursion - function that returns the power of number
-*@n: number
-*Return: the natural square root
-*/
-int _sqrt_recursion(int n)
+ * is_prime_number - says if an integer is a prime number or not
+ * @n: number to evaluate
+ *
+ * Return: 1 if n is a prime number, 0 if not
+ */
+int is_prime_number(int n)
 {
-	return (comparar(n, 1));
+	if (n <= 1)
+		return (0);
+	return (actual_prime(n, n - 1));
+}
+
+/**
+ * actual_prime - calculates if a number is prime recursively
+ * @n: number to evaluate
+ * @i: iterator
+ *
+ * Return: 1 if n is prime, 0 if not
+ */
+int actual_prime(int n, int i)
+{
+	if (i == 1)
+		return (1);
+	if (n % i == 0 && i > 0)
+		return (0);
+	return (actual_prime(n, i - 1));
 }
