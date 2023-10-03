@@ -1,9 +1,11 @@
 #include<stdio.h>
 
-/*
- * print "Programming is like building a multilingual puzzle
+/**
+ * main - Prints quote
+ * print Programming is like building a multilingual puzzle
  *
  * using puts instead of printf
+ * return: zero to success
  */
 int main(void)
 {
