@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * _isalpha - checks for alphabetic character.
- * 
+ * _abs - computes the absolute value of an integer.
+ * @n: Enter the number you want to check here
  * Return: 1 if c is a letter, lowercase or uppercase
  */
 	int _abs(int n)
