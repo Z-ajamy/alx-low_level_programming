@@ -12,7 +12,7 @@
 	{
 		int m = 0;
 
-		while (m <= 3)
+		while (m <= 9)
 		{
 			int l = 0;
 
