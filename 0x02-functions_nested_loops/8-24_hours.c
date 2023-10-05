@@ -6,8 +6,8 @@
  */
 	void jack_bauer(void)
 {
-		
-		int n = 0;
+
+	int n = 0;
 
 	while (n <= 2)
 	{
@@ -21,9 +21,10 @@
 
 		}
 		else
-		{	while (l <= 5)
+		{
+			while (l <= 5)
 			{
-				
+
 				int p = 0;
 
 				while (p <= 9)
