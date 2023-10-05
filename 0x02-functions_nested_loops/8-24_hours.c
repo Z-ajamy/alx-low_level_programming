@@ -17,7 +17,8 @@
 		{
 			int l = 0;
 		if (n == 2 && m == 4)
-		{ return 0;
+		{
+
 		}
 		else
 		{	while (l <= 5)
@@ -27,12 +28,12 @@
 
 				while (p <= 9)
 				{
-					putchar('0' + n);
-					putchar('0' + m);
-					putchar(':');
-					putchar('0' + l);
-					putchar('0' + p);
-					putchar('\n');
+					_putchar('0' + n);
+					_putchar('0' + m);
+					_putchar(':');
+					_putchar('0' + l);
+					_putchar('0' + p);
+					_putchar('\n');
 				p++;
 								}
 			l++;
