@@ -13,7 +13,8 @@
 	{
 		int m = 0;
 
-		while (m <= 9)
+		
+		kjwhile (m <= 9)
 		{
 			printf("%d,  ", n * m);
 		m++;
