@@ -6,7 +6,7 @@
  *
  */
 	void times_table(void)
-{ //jfhgkiujfdnhgkfghdfhblfgjmbokifdhnj;ivoklnxciklovhn
+{
 	int n = 0;
 
 	while (n <= 9)
