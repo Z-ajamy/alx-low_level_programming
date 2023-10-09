@@ -1,57 +1,45 @@
+#include <stdio.h>
 #include "main.h"
 /**
- * times_table - prints the 9 times table, starting with 0
- */
+ * print_times_table - Multiplication table from 0 to 15
+*/
 void print_times_table(int n)
 {
-	int n = 0;
-
-	while (n <= 9)
+	if (n < 15 && n > 0)
 	{
-		int m = 0;
+		int i, j;
 
-		while (m <= 9)
+		for (i = 0; i <= n; i++)
 		{
-		int	R = n * m;
-		
-		if (R == 0 && m == 0)
-		{
-			_putchar(R + '0');
-		}
-		else if (R < 10 && m != 9)
+			for (j = 0; j <= n; j++)
 			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(R + '0');
-			}
-			else if (R >= 10 && m != 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(R / 10 + '0');
-				_putchar(R % 10 + '0');
-			}
-			else if (m == 9)
-			{
-				if (R >= 10)
-				{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(R / 10 + '0');
-				_putchar(R % 10 + '0');
+			int R = i * j;
+
+				if (R == 0)
+					{
+			   if (j == 0)
+			   {
+				 printf("%d", R);
 				}
-				else if (R < 10)
+				else
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(R % 10 + '0');
+					printf(",   %d", R);
 				}
 			}
-			m++;
+			else if (R < 10)
+			{
+				printf(",   %d", R);
+			}
+			else if (R >= 10 && R < 100)
+			{
+				printf(",  %d", R);
+			}
+			else if (R >= 100)
+			{
+				printf(", %d",R);
+			} 
+			}
+		putchar('\n');
 		}
-		_putchar('\n');
-		n++;
 	}
 }
