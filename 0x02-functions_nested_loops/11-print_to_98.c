@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio.h>
+#include "main.h"
 /**
  * print_times_table - Multiplication table from 0 to 15
 */
