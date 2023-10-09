@@ -7,14 +7,15 @@
  *
  */
 	void times_table(void)
-{
+{ //jfhgkiujfdnhgkfghdfhblfgjmbokifdhnj;ivoklnxciklovhn
 	int n = 0;
 
 	while (n <= 9)
 	{
 		int m = 0;
 
-		while (m <= 9)
+		
+		kjwhile (m <= 9)
 		{
 		int	R = n * m;
 /* اول-عمود-اصفار*/
