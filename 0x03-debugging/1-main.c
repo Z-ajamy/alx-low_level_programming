@@ -13,10 +13,10 @@ int main(void)
 
         i = 0;
 
-        while (i < 10)
+        /*while (i < 10)
         {
-                putchar(i); /*We need to find the arithmetic factor i++*/
-        }
+                putchar(i); 
+        }*/
 
         printf("Infinite loop avoided! \\o/\n");
 
