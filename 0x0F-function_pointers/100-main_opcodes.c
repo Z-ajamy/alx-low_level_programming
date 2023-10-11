@@ -1,29 +1,42 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void print_opcodes(char *address, int bytes) {
-    for (int i = 0; i < bytes; i++) {
-        if (i == bytes - 1) {
-            printf("%02hhx\n", address[i]);
-        } else {
-            printf("%02hhx ", address[i]);
-        }
-    }
-}
+/**
+ * main - prints its own opcodes
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
+ */
+int main(int argc, char *argv[])
+{
+	int bytes, i;
+	char *arr;
 
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        printf("Error\n");
-        return 1;
-    }
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
 
-    int bytes = atoi(argv[1]);
-    if (bytes < 0) {
-        printf("Error\n");
-        return 2;
-    }
+	bytes = atoi(argv[1]);
 
-    char *address = (char *)&print_opcodes;
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 
-    print_opcodes(address, bytes);
-    return 0;
+	arr = (char *)main;
+
+	for (i = 0; i < bytes; i++)
+	{
+		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx ", arr[i]);
+	}
+	return (0);
 }
