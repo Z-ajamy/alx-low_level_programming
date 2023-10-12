@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0;
 	char *str;
 	int num;
-	double num_double;
+	float num_float;
 	char *separator = "";
 
 	va_start(args, format); /* Initialize the argument list. */
