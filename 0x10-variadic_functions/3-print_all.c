@@ -12,40 +12,33 @@ void print_all(const char * const format, ...)
 	va_list args;
 	unsigned int i = 0;
 	char *str;
-	int num;
-	float num_float;
-	char *separator = "";
-
 	va_start(args, format); /* Initialize the argument list. */
-
 	while (format && format[i])
 	{
+		if (i > 0 && (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's'))
+			printf(", ");
+
 		switch (format[i])
 		{
 			case 'c':
-				printf("%s%c", separator, va_arg(args, int));
+				printf("%c", va_arg(args, int));
 				break;
 			case 'i':
-				printf("%s%d", separator, va_arg(args, int));
+				printf("%d", va_arg(args, int));
 				break;
 			case 'f':
-				printf("%s%f", separator, va_arg(args, double));
+				printf("%f", va_arg(args, double));
 				break;
 			case 's':
 				str = va_arg(args, char *);
 				if (str == NULL)
-					str = "(nil)";
-				printf("%s%s", separator, str);
+					printf("(nil)");
+				else
+					printf("%s", str);
 				break;
-			default:
-				i++;
-				continue;
 		}
-		separator = ", ";
 		i++;
 	}
-
 	va_end(args); /* Clean up the argument list. */
-
 	printf("\n"); /* Print a new line at the end. */
 }
