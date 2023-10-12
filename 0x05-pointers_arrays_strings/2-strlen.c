@@ -1,21 +1,17 @@
-#include "main.h"
-
+#include"main.h"
 /**
- * _strlen - Returns the length of a string.
- * @s: The input string.
- *
- * Return: The length of the string.
- */
+ * _strlen - a function that
+ * returns the length of a string
+ * @s: string
+ * @*s: string pointer
+*/
+
 int _strlen(char *s)
 {
-    int length = 0;
-
-    while (*s != '\0')
-    {
-        length++;
-        s++;
-    }
-
-    return length;
+	int i = 0;
+	while (s[i] != \0)
+	{
+		i++;
+	}
+	return (i);
 }
-
