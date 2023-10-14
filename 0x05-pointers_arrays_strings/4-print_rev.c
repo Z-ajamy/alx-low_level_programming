@@ -11,23 +11,9 @@ void print_rev(char *s)
     {
         continue;
     }
-    int n;
-    int c = i;
-    char *str;
-    str[c + 1];
-
-    for ( n = 0; n == (c + 1) ; n++)
+int n;
+    for (n = i-1; n >=0; n--)
     {
-        if (n <= c)
-        {
-         str[n] = s[i];
-        }
-        else if (n > c)
-        {
-            str[n+1] = '\0';
-        }
-        i--;
-       
+        putchar(s[n]);
     }
-    
 }
