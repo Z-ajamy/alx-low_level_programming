@@ -10,7 +10,7 @@ int main (int argc , char *argv[])
     if (argc == 3)
     {
         res = atoi(argv[1]) * atoi(argv[1]);
-        printf("%d", res)
+        printf("%d", res);
     }
-    
+    return (0);
 }
