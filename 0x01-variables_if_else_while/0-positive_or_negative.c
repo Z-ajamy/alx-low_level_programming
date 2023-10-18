@@ -3,8 +3,8 @@
 #include<stdio.h>
 
 /**
- * the number stored in the variable n is positive or negative
- * 
+ * main - the number stored in the variable n is positive or negative
+ * Return 0 (success)
 */
 int main(void)
 {
