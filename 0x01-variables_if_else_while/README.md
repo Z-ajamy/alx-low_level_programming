@@ -1,1 +1,1 @@
-prints  all single digit numbers of base 10 starting from 0 - AGAIN ;)
+prints the alphabet in lowercase in reverse
