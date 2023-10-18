@@ -1,1 +1,1 @@
-prints the alphabet in lowercase in reverse
+prints all the numbers of base 16 in lowercase
