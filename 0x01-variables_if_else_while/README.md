@@ -1,1 +1,1 @@
-UPDATE
+last digit of the number
