@@ -2,10 +2,10 @@
 #include "lists.h"
 
 /**
- * list_len - returns
- * @h: to the list_t list
+ * list_len - returns the number
+ * @h: pointer
  *
- * Return: number 
+ * Return: number
  */
 size_t list_len(const list_t *h)
 {
