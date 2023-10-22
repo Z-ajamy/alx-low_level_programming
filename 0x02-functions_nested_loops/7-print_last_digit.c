@@ -14,9 +14,10 @@
 	}
 	else
 	{
+		i % 10;
 		i *= -1;
 
-		_putchar((i % 10) + 48);
-		return (i % 10);
+		_putchar((i) + 48);
+		return (i);
 	}
 }
