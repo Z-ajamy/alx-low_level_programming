@@ -1,1 +1,1 @@
-function that prints the alphabet
+function that prints 10 times the alphabet
