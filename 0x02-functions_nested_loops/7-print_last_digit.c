@@ -14,7 +14,7 @@
 	}
 	else
 	{
-		i = i * -1;
+		i *= -1;
 
 		_putchar((i % 10) + 48);
 		return (i % 10);
