@@ -1,42 +1,30 @@
 #include "main.h"
-/**
- * raise_power - raise a number to a power
- * @power: power to raise the number to
- * @base: base number
- * Return: the result of the operation
-*/
-int raise_power(int power, int base)
-{
-	int ans = 1;
+#include <stdio.h>
 
-	while (power > 0)
-	{
-		ans *= base;
-		power--;
-	}
-	return (ans);
-}
 /**
- * binary_to_uint - convert binary number to unsigned int
- * @b: pointer to the binary string
- * Return: converted number or 0 if b is NULL or contains chars not 0 or 1
-*/
+ * binary_to_uint - convert a binary number to an unsigned int
+ * @b: char string
+ * Return: converted decimal number or 0 if there is an unconvertable char
+ */
 unsigned int binary_to_uint(const char *b)
 {
-	int ans = 0, i = 0, len = 0;
+	unsigned int total, power;
+	int len;
 
 	if (b == NULL)
 		return (0);
-	while (b[len])
-		len++;
-	while (b[i])
+
+	for (len = 0; b[len]; len++)
 	{
-		if (b[i] != '0' && b[i] != '1')
+		if (b[len] != '0' && b[len] != '1')
 			return (0);
-		ans += (b[i] - '0') * raise_power(len - 1, 2);
-		len--;
-		i++;
 	}
 
-	return (ans);
+	for (power = 1, total = 0, len--; len >= 0; len--, power *= 2)
+	{
+		if (b[len] == '1')
+			total += power;
+	}
+
+	return (total);
 }
