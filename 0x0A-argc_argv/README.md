@@ -1,1 +1,1 @@
-prints the name of the program
+print the number of arguments passed to the program
