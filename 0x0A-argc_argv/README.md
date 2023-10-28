@@ -1,1 +1,1 @@
-multiplies two numbers
+atoi(argv[i]);
