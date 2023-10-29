@@ -22,16 +22,17 @@
 		len2 = null_OR_not(s2);
 		p = (char *) malloc((len1 + len2 + 1) * sizeof(char));
 
-		for (i = 0; i < len1; i++)
-		{
-			p[i] = s1[i];
-		}
-		for (j = 0; i < (len1 + len2) ; j++)
-		{
-			p[i] = s2[j];
-			i++;
-		}
-		p[i] = '\0';
+		 for (i = 0; s1 && s1[i] != '\0'; i++)
+    {
+        p[i] = s1[i];
+    }
 
+    for (j = 0; s2 && s2[j] != '\0'; j++)
+    {
+        p[i] = s2[j];
+        i++;
+    }
+
+    p[i] = '\0';
 		return(p);
 	}
