@@ -16,7 +16,7 @@
 	{}
 	p = (char *) malloc(num * sizeof(char));
 
-	if (p == NULL)
+	if (p == (NULL))
 	{
 		return (NULL);
 	}
