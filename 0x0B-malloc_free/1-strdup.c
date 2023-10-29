@@ -16,13 +16,13 @@
  
 	for (num = 0; str[num] != '\0'; num++)
 	{}
-	p = (char *) malloc(num * sizeof(char));
+	p = (char *) malloc((num + 1) * sizeof(char));
 
 	if (p == (NULL))
 	{
 		return (NULL);
 	}
-	for (n = 0; n <= (num - 1); n++)
+	for (n = 0; n <= (num ); n++)
 	{
 		p[n] = str[n];
 	}
