@@ -19,14 +19,14 @@
 	{
 		return (NULL);
 	}
-	if(s1)
+	if(s1 != NULL)
 	{
 		for (n = 0; n <= (i - 1) ; n++)
 		{
 			p[n] = s1[n];
 		}
 	}
-	if(s2)
+	if(s2 != NULL)
 	{
 		for (m = 0; m <= c; m++)
 		{
