@@ -19,15 +19,20 @@
 	{
 		return (NULL);
 	}
-
-	for (n = 0; n <= (i - 1) ; n++)
+	if(s1)
 	{
-		p[n] = s1[n];
+		for (n = 0; n <= (i - 1) ; n++)
+		{
+			p[n] = s1[n];
+		}
 	}
-	for (m = 0; m <= c; m++)
+	if(s2)
 	{
-		p[n] = s2[m];
-		n++;
+		for (m = 0; m <= c; m++)
+		{
+			p[n] = s2[m];
+			n++;
+		}
 	}
 	p[i + c] = '\0';
 		
