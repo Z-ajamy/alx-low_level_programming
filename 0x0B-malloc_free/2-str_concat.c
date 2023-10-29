@@ -1,39 +1,36 @@
-#include "main.h"
-#include <stdlib.h>
+#include"main.h"
+#include<stdlib.h>
 
-	char *str_concat(char *s1, char *s2)
+	int null_OR_not(char *s3)
 	{
-	int i, n, c, m;
-	char *p;
+		int i;
+		if (s3 == NULL)
+			return(0);
 
-	if (s1 == NULL && s2 == NULL) {
-        return NULL;}
-	for (i = 0; s1[i] != '\0'; i++)
-	{}
-	for (c = 0; s2[c] != '\0'; c++)
-	{}
-	p = (char *) malloc((i + c + 1)* sizeof(char));
+		for (i = 0; s3[i] != '\0'; i++)
+		{}
+		return (i);
+		}
 	
-	if (p == NULL)
+
+    char *str_concat(char *s1, char *s2)
 	{
-		return (NULL);
-	}
-	if(s1)
-	{
-		for (n = 0; n < i; n++)
+		int len1, len2, i, j;
+		char *p;
+
+		len1 = null_OR_not(s1);
+		len2 = null_OR_not(s2);
+		p = (char *) malloc((len1 + len2 + 1) * sizeof(char));
+
+		for (i = 0; i < len1; i++)
 		{
-			p[n] = s1[n];
+			p[i] = s1[i];
 		}
-	}
-	if(s2)
-	{
-		for (; n < (c + i); n++)
+		for (j = 0; i < (len1 + len2) ; j++)
 		{
-			p[n] = s2[m];
-			m++;
+			p[i] = s2[j];
+			i++;
 		}
-	}
-	p[n] = '\0';
-		
-	return (p);
+
+		return(p);
 	}
