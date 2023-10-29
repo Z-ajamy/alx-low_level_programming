@@ -11,9 +11,10 @@
 	int num;
 	char *p;
 	int n;
+
 	if (str == NULL)
-		return (NULL);
- 
+	return (NULL);
+
 	for (num = 0; str[num] != '\0'; num++)
 	{}
 	p = (char *) malloc((num + 1) * sizeof(char));
