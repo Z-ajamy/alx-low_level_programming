@@ -3,14 +3,11 @@
 
 	char *str_concat(char *s1, char *s2)
 	{
+	int i, n, c, m;
+	char *p;
+
 	if (s1 == NULL && s2 == NULL) {
         return NULL;}
-	int i;
-	char *p;
-	int n;
-	int c;
-	int m;
-
 	for (i = 0; s1[i] != '\0'; i++)
 	{}
 	for (c = 0; s2[c] != '\0'; c++)
