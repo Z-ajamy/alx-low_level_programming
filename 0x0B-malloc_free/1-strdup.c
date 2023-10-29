@@ -20,7 +20,7 @@
 	{
 		return (NULL);
 	}
-	for (n = 0; n < num; n++)
+	for (n = 0; n <= num; n++)
 	{
 		p[n] = str[n];
 	}
