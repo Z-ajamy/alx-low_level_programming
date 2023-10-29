@@ -22,7 +22,7 @@
 	{
 		return (NULL);
 	}
-	for (n = 0; n <= (num -2); n++)
+	for (n = 0; n <= (num - 1); n++)
 	{
 		p[n] = str[n];
 	}
