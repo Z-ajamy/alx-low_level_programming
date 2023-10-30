@@ -1,39 +1,50 @@
 #include "main.h"
-#include <stdlib.h>
-
 /**
- * read_textfile - Reads a text 
- * @filename: A pointer to the name
- * @letters: The number of letters the
- *           function should read and print.
- *
- * Return: If the function fails or filename is NULL - 0.
- *         O/w - the actual number of bytes the function can read and print.
- */
+ * read_textfile - reads a text file and prints it to the POSIX standard output
+ * @filename: name of the file
+ * @letters: number of letters it should read and print
+ * Return: actual number of letters it could read and print, 0 if fails
+*/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t o, r, w;
-	char *buffer;
+	int file_descriptor;
+	ssize_t readed, printed;
+	char *BUFFER;
 
+	/* check if filename is NULL */
 	if (filename == NULL)
 		return (0);
 
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
+	file_descriptor = open(filename, O_RDONLY);
+
+	/* failed to open file */
+	if (file_descriptor < 0)
 		return (0);
 
-	o = open(filename, O_RDONLY);
-	r = read(o, buffer, letters);
-	w = write(STDOUT_FILENO, buffer, r);
+	BUFFER = malloc(sizeof(char) * letters);
+	/* failed to allocate memory */
+	if (BUFFER == NULL)
+		return (0);
 
-	if (o == -1 || r == -1 || w == -1 || w != r)
+	readed = read(file_descriptor, BUFFER, letters);
+
+	/* failed to read file */
+	if (readed < 0)
 	{
-		free(buffer);
+		free(BUFFER);
 		return (0);
 	}
 
-	free(buffer);
-	close(o);
+	printed = write(STDOUT_FILENO, BUFFER, readed);
 
-	return (w);
+	/* failed to write to stdout */
+	if (printed < 0)
+	{
+		free(BUFFER);
+		return (0);
+	}
+
+	free(BUFFER);
+	close(file_descriptor);
+	return (printed);
 }
