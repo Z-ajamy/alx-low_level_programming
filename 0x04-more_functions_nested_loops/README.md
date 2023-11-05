@@ -1,1 +1,1 @@
-check if char os a digit
+multiplies two integers
