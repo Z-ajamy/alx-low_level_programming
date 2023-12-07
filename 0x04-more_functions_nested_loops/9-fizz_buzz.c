@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - Fizz-Buzz test
- * Return 0 (SUCCESS)
+ * Return : 0 (SUCCESS)
 */
 int main(void)
 {
