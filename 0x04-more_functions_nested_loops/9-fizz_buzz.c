@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - Fizz-Buzz test
+ * main - FizzBuzz test
  * Return : 0 (SUCCESS)
 */
 int main(void)
