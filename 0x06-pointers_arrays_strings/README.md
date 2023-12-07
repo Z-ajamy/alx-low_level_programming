@@ -1,1 +1,1 @@
-_putchar
+function that concatenates two strings.
