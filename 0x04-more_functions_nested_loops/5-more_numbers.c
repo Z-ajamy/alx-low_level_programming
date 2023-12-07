@@ -1,9 +1,9 @@
-#include"main.h"
+#include "main.h"
 
 /**
- * more_numbers - a function that prints 10 times the numbers,
- *  from 0 to 14, followed by a new line.
-*/
+ * more_numbers -  function that prints 10 times the numbers, from 0 to 14,
+ * followed by a new line You can only use _putchar three times in your code
+ */
 void more_numbers(void)
 {
 	int i, n;
@@ -12,18 +12,15 @@ void more_numbers(void)
 	{
 		for (i = 0; i < 15; i++)
 		{
-			if (i < 10)
+			int j = i % 10;
+
+			if (i > 9)
 			{
-				_putchar(48 + i);
-			}
-			else if (i > 9 && i < 15)
-			{
-				int j = i % 10;
 				int m = i / 10;
 
-				_putchar(48 + m);
-				_putchar(48 + j);
+				_putchar('0' + m);
 			}
+			_putchar('0' + j);
 		}
 		_putchar('\n');
 	}
