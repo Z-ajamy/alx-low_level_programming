@@ -1,1 +1,1 @@
-a function that concatenates two strings it will use at most n bytes from src
+a function that concatenates two strings it will use at most n bytes …
