@@ -1,20 +1,22 @@
 #include"main.h"
+#include <stdio.h>
+
 /**
- * _memcpy - a function that copies memory area.
- * @dest: A pointer to the memory location
- * from where the data is to be copied.
- * @src: A pointer to the memory location
- * where the copied data will be stored.
- * @n:The number of bytes to be copied.
- * Return: new dest
+ * _strchr -  a function that locates a character in a string.
+ * @s: string
+ * @c: char
+ * Return: string
 */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		dest[i] = src[i];
+		if (s[i] == c)
+		{
+			return (s + i);
+		}
 	}
-	return (dest);
+	return (NULL);
 }
