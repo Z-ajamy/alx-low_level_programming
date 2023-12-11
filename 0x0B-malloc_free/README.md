@@ -1,1 +1,1 @@
-a function that returns a pointer to a 2 dimensional array of integers
+a function that frees a 2 dimensional grid
