@@ -8,8 +8,8 @@
 */
 char *str_concat(char *s1, char *s2)
 {
-	int i, n;
-	int j, m;
+	int i, n = 0;
+	int j, m = 0;
 	char *p;
 
 	for (i = 0; s1[i] != '\0'; i++)
@@ -22,15 +22,21 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
+if (s1)
+{
 	for (n = 0; n < i; n++)
 	{
 		p[n] = s1[n];
 	}
+}
+if (s2)
+{
 	for (m = 0; m <= j; n++)
 	{
 		p[n] = s2[m];
 		m++;
 	}
+}
 	return (p);
 
 }
