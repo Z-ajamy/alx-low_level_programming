@@ -1,1 +1,1 @@
-a function that concatenates two strings.
+0x0B. C - malloc, free
