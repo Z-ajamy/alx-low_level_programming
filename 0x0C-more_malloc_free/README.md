@@ -1,1 +1,1 @@
-Allocates memory for an array and initializes it with zero.
+Creates an array of integers.
