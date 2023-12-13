@@ -37,8 +37,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
         p[m] = s2[l];
         l++;
     }
-    while (n >= len2 && i < (len1 + len2))
-		s[i++] = s2[j++];
+    while (n >= j && i < (i + j))
+		p[i++] = s2[j++];
     p[i + n] = '\0';
     return(p);
 }
