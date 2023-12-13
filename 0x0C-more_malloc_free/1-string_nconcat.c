@@ -29,13 +29,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
     }
     for (m = 0; m < i; m++)
     {
-        p[m] = s1[m];
+        pp[m] = s1[m];
     }
     for (; m < (i + n); m++)
     {
-        p[m] = s2[l];
+        pp[m] = s2[l];
         l++;
     }
-    p[i + n] = '\0';
-    return(p);
+    pp[i + n] = '\0';
+    return(pp);
 }
