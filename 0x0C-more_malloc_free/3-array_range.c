@@ -29,5 +29,5 @@ int *array_range(int min, int max)
 /* Fill the array with values from min to max */
 for (n = 0; n <= i;n++)
 	p[n] = min++ ;
-return(p);
+return (p);
 }
