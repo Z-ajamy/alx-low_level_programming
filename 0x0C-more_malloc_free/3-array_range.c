@@ -17,7 +17,7 @@ int *array_range(int min, int max)
 	int *p;
 
 	/* Check if min is greater than or equal to max */
-	if (min >= max)
+	if (min > max)
 		return (NULL);
 	/* Calculate the size of the array */
 	i = max - min;
@@ -27,7 +27,7 @@ int *array_range(int min, int max)
 	if (p == NULL)
 		return (NULL);
 /* Fill the array with values from min to max */
-for (n = 0; n <= i;n++)
-	p[n] = min++ ;
+for (n = 0; n <= i; n++)
+	p[n] = min++;
 return (p);
 }
