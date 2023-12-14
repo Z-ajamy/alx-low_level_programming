@@ -1,1 +1,1 @@
-a function-like macro ABS(x) that computes the absolute value of a number x
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c -o e
