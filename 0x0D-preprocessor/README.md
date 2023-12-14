@@ -1,1 +1,1 @@
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c -o e
+a function-like macro SUM(x, y) that computes the sum of the numbers x and y.
