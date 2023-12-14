@@ -10,17 +10,17 @@ void print_binary(unsigned long int n)
 
 	i = sizeof(n) * 8 - 1;
 	if (n == 0)
-		putchar('0');
+		_putchar('0');
 
 	while (i >= 0)
 	{
 		if ((n >> i) & 1)
 		{
-			putchar('1');
+			_putchar('1');
 			flag = 1;
 		}
 		else if (flag)
-			putchar('0');
+			_putchar('0');
 		i--;
 	}
 }
