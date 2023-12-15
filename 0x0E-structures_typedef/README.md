@@ -1,1 +1,1 @@
-a function that prints a struct dog
+0
