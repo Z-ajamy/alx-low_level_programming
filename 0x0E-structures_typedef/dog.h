@@ -4,10 +4,10 @@
  * struct dog - dogs;)
  * @name: its name
  * @age: its age
- * @oner: its oner
+ * @owner: its oner
 */
 
- struct dog
+struct dog
 {
 	char *name;
 	float age;
