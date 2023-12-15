@@ -6,11 +6,12 @@
  * @age: its age
  * @oner: its oner
 */
-#define struct dog\
-{\
-	char *name;\
-	float age;\
-	char *owner;\
+
+ struct dog
+{
+	char *name;
+	float age;
+	char *owner;
 };
 
 #endif
