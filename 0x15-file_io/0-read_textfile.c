@@ -1,46 +1,32 @@
-#include"main.h"
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
+#include "main.h"
 
+/**
+ * read_textfile - function
+ * @filename: name
+ * @letters: the numbers
+ *
+ * Return: the actual num
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    int fd;
-    ssize_t nread, nwrite;
-    char *buffer;
+	char *print_field;
+	int file, read_file;
 
-    if (filename == NULL)
-        return (0);
+	if (!filename)
+		return (0);
 
-    fd = open(filename, O_RDONLY);
-    if (fd == -1)
-        return (0);
+	print_field = malloc(letters * sizeof(char));
+	if (!print_field)
+		return (0);
 
-    buffer = malloc(sizeof(char) * letters);
-    if (buffer == NULL)
-    {
-        close(fd);
-        return (0);
-    }
+	file = open(filename, O_RDONLY);
+	if (file == -1)
+		return (0);
 
-    nread = read(fd, buffer, letters);
-    if (nread == -1)
-    {
-        free(buffer);
-        close(fd);
-        return (0);
-    }
+	read_file = read(file, print_field, letters);
+	write(STDOUT_FILENO, print_field, read_file);
 
-    nwrite = write(STDOUT_FILENO, buffer, nread);
-    if (nwrite == -1 || nwrite != nread)
-    {
-        free(buffer);
-        close(fd);
-        return (0);
-    }
-
-    free(buffer);
-    close(fd);
-
-    return (nwrite);
+	close(file);
+	free(print_field);
+	return (read_file);
 }
