@@ -10,11 +10,11 @@
  */
 int main(int argc, char *argv[])
 {
-	char *o = argv[2];
+	char *o;
 	int a;
 	int b;
-	int (*fun_p)(int, int);
 
+	o = argv[2];
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -37,8 +37,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (100);
 	}
-	fun_p = get_op_func(o);
 
-	printf("%d\n", fun_p(a, b));
+	printf("%d\n", get_op_func(o)(a, b));
 	return (0);
 }
