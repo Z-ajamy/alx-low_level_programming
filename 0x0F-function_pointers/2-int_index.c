@@ -12,23 +12,19 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-    if (array && size > 0 && cmp)
-    {
-        int i, n = 0;
-        for (i = 0; i < size; i++)
-        {
-            if ((*cmp)(array[i]))
-            {
-                n++;
-            }
-        }
-        if (n > 0)
-        {
-            return n;
-        }
-        else
-            return (-1);
-    }
-    else
-        return (-1);
+	if (array && size > 0 && cmp)
+	{
+		int i;
+
+		for (i = 0; i < size; i++)
+		{
+			if ((*cmp)(array[i]))
+			{
+				return (i);
+			}
+		}
+		return (-1);
+	}
+	else
+		return (-1);
 }
