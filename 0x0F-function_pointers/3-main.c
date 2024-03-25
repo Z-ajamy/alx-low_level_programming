@@ -20,7 +20,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (98);
 	}
-	if (*o != '+' && *o != '-' && *o != '*' && *o != '/' && *o != '%')
+
+
+	if ((*o != '+' && *o != '-' && *o != '*' && *o != '/' && *o != '%') || argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		return (99);
@@ -34,7 +36,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (100);
 	}
-
 	fun_p = get_op_func(o);
 
 	printf("%d\n", fun_p(a, b));
