@@ -10,12 +10,15 @@
  */
 void print_all(const char * const format, ...)
 {
+    if (format != NULL)
+{
     va_list args;
     int i = 0;
     int n = strlen(format);
     char *s;
-        char *seperator = "";
+    char *seperator = "";
 
+    
     va_start(args, format);
     while (i < n)
     {
@@ -57,4 +60,5 @@ void print_all(const char * const format, ...)
     }
     va_end(args);
     printf("\n");
+}
 }
