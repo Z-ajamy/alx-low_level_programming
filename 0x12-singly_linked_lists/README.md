@@ -16,3 +16,4 @@ a function that adds a new node at the end of a list_t list.
 a function that adds a new node at the end of a list_t list.
 a function that frees a list_t list.
 a function that frees a list_t list.
+a function that frees a list_t list.
