@@ -5,3 +5,4 @@ a function that adds a new node at the beginning of a listint_t list.
 a function that adds a new node at the end of a listint_t list
 a function that adds a new node at the end of a listint_t list
 a function that adds a new node at the beginning of a listint_t list.
+a function that frees a listint_t list
