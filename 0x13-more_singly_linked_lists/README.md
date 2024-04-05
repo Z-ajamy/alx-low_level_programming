@@ -33,3 +33,4 @@ a function that inserts a new node at a given position.
 a function that inserts a new node at a given position.
 إذا كان idx أكبر من عدد العناصر في القائمة، فإن الدالة تعيد NULL دون تحديد أي سبب لفشل الإدراج. يجب أن تقوم الدالة بالتحقق من idx بشكل صحيح وإرجاع NULL إذا كان خارج نطاق القائمة.
 a function that inserts a new node at a given position.
+a function that inserts a new node at a given position.
