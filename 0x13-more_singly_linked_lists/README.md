@@ -37,3 +37,4 @@ a function that inserts a new node at a given position.
 insertnodeintat_index(NULL, 0, 98)
 a function that inserts a new node at a given position.
 a function that inserts a new node at a given position.
+listint_t
