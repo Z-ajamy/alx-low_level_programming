@@ -4,7 +4,7 @@ void print_binary(unsigned long int n)
 {
     int i, size, shift;
 
-    size = 8 * sizeof(unsigned long int);
+    size = 8;
     i = 1;
     for (shift = 0; shift < size; shift++)
     {
