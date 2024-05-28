@@ -1,14 +1,16 @@
 #include"lists.h"
 /**
- * add_nodeint - adds a new node at the beginning of a linked list
- * @head: pointer to the first node in the list
- * @n: data to insert in that new node
+ * add_dnodeint_end - adds a new node at the end
+ * of a dlistint_t list
  *
- * Return: pointer to the new node, or NULL if it fails
+ * @head: head of the list
+ * @n: value of the element
+ * Return: the address of the new element
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *ptr, *tail, *new_node;
+
 	ptr = tail = *head;
 	while (ptr != NULL)
 	{
@@ -21,17 +23,17 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		free(ptr);
 		free(tail);
 		free(new_node);
-		return NULL;
+		return (NULL);
 	}
-	
+
 	new_node->n = n;
 	new_node->next = NULL;
 	new_node->prev = tail;
 	if (!tail)
 	{
 		(*head) = new_node;
-		return(new_node);
+		return (new_node);
 	}
 	tail->next = new_node;
-	return(new_node);
+	return (new_node);
 }
