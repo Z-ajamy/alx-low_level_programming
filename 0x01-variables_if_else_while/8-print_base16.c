@@ -1,26 +1,29 @@
-#include<stdio.h>
+#include <stdio.h>
+
 /**
- * main - that prints  prints all the numbers of base 16 in lowercase
- * followed by a new line.
- * Return: 0 (success)
-*/
+ * main - Entry point of the program
+ *
+ * Description: Prints all hexadecimal digits (0-9, a-f)
+ * using `putchar`.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-int i;
-i = 48;
-while (i <= 57)
-{
-	putchar(i);
-	i++;
-}
-i = 97;
+	char i = '0', n = 'a';
 
-while (i <= 102)
-{
-	putchar(i);
-	i++;
-}
+	while (i != ('9' + 1))
+	{
+		putchar(i);
+		i++;
+	}
 
-putchar('\n');
-return (0);
+	while (n != ('f' + 1))
+	{
+		putchar(n);
+		n++;
+	}
+	putchar('\n');
+
+	return (0);
 }
