@@ -1,31 +1,31 @@
-#include<stdio.h>
+#include <stdio.h>
+
 /**
- * main - all possible different combinations of two digits.
- * Numbers must be separated by ,, followed by a space
+ * main - Entry point of the program
  *
- * Return: 0 (success)
+ * Description: Prints all possible different combinations
+ * of two digits in ascending order using `putchar`.
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int n, m;
+	int i, j;
 
-	for (n = 48; n <= 57; n++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		for (m = 48; m <= 57; m++)
+		for (j = (i + 1); j <= '9'; j++)
 		{
-			if (m > n)
+			putchar(i);
+			putchar(j);
+			if (i != '8' || j != '9')
 			{
-				putchar(n);
-				putchar(m);
-
-				if ((m != 57) || (n != 56))
-				{
 				putchar(',');
 				putchar(' ');
-				}
 			}
 		}
 	}
-putchar('\n');
-return (0);
+	putchar('\n');
+
+	return (0);
 }
