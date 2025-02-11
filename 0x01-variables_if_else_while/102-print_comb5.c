@@ -25,14 +25,15 @@ int main(void)
 	{
 		for (j = '0'; j <= '9'; j++)
 		{
-			for (n = i + 1; n <= '9'; n++)
+			for (n = i; n <= '9'; n++)
 			{
-				for (m = (j + 1); m <= '9'; m++)
+				for (m = j; m <= '9'; m++)
 				{
 					if (i == n && j == m)
 					{
 						continue;
 					}
+					
 					
 					if (i != '0'|| j != '0' || n != '0' || m != '1')
 					{
