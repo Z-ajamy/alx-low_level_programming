@@ -1,11 +1,15 @@
 #include <stdlib.h>
 #include <time.h>
-#include<stdio.h>
+#include <stdio.h>
 
 /**
- * main - the number stored in the variable n is positive or negative
- * Return: 0 (success)
-*/
+ * main - Entry point of the program
+ *
+ * Description: Generates a random number and determines
+ * whether it is positive, negative, or zero.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
@@ -17,16 +21,14 @@ int main(void)
 	{
 		printf("%d is positive\n", n);
 	}
-
 	else if (n < 0)
 	{
 		printf("%d is negative\n", n);
 	}
-
 	else
 	{
 		printf("%d is zero\n", n);
+	}
 
-	}
 	return (0);
-	}
+}
