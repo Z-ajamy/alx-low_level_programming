@@ -1,17 +1,23 @@
-#include<stdio.h>
+#include <stdio.h>
+
 /**
- * main - that prints the alphabet in lowercase in reverse, followed by a new line.
+ * main - Entry point of the program
  *
- * Return: 0 (success)
-*/
+ * Description: Prints the lowercase alphabet in reverse order
+ * using `putchar`.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-int i;
+	char i = 'z';
 
-for (i = 122; i >= 97; i--)
-{
-	putchar(i);
-}
-putchar('\n');
-return (0);
+	while (i != ('a' - 1))
+	{
+		putchar(i);
+		i--;
+	}
+	putchar('\n');
+
+	return (0);
 }
