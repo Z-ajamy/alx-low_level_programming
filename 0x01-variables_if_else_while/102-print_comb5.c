@@ -20,7 +20,8 @@
  */
 int main(void)
 {
-    int i, j, n, m;
+	int i, j, n, m;
+
 	for (i = '0'; i <= '9'; i++)
 	{
 		for (j = '0'; j <= '9'; j++)
@@ -29,14 +30,14 @@ int main(void)
 			{
 				for (m = '0'; m <= '9'; m++)
 				{
-					if (((i - 48)* 10 + ((j - 48))) < ((n - 48)* 10 + ((m - 48))))
+					if (((i - 48) * 10 + ((j - 48))) < ((n - 48) * 10 + ((m - 48))))
 					{
-						if (i != '0'|| j != '0' || n != '0' || m != '1')
+						if (i != '0' || j != '0' || n != '0' || m != '1')
 						{
 							putchar(',');
 							putchar(' ');
 						}
-						
+
 						putchar(i);
 						putchar(j);
 						putchar(' ');
@@ -50,5 +51,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
-	return 0;
+	return (0);
 }
