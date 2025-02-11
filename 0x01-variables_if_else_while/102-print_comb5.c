@@ -1,5 +1,7 @@
 #include<stdio.h>
 /**
+ * main - all possible different combinations of two digits.
+ * Numbers must be separated by ,, followed by a space
  * main - prints all possible combinations of two two-digit numbers.
  * The numbers should range from 0 to 99 The
  * two numbers should be separated by a space
@@ -20,38 +22,28 @@
  */
 int main(void)
 {
-	int i, j, n, m;
-	for (i = '0'; i <= '9'; i++)
+    
+	int i, j;
+
+	for (i = 0; i <= 99; i++)
 	{
-		for (j = '0'; j <= '9'; j++)
+		for (j = 0; j <= 99; j++)
 		{
-			for (n = i; n <= '9'; n++)
+			if (i < j)
 			{
-				for (m = j; m <= '9'; m++)
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if (i != 98 || j != 99)
 				{
-					if (i == n && j == m)
-					{
-						continue;
-					}
-					
-					
-					if (i != '0'|| j != '0' || n != '0' || m != '1')
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					
-					putchar(i);
-					putchar(j);
+					putchar(',');
 					putchar(' ');
-					putchar(n);
-					putchar(m);
-
 				}
-
 			}
 		}
 	}
-	putchar('\n');
-	return 0;
+putchar('\n');
+return (0);
 }
