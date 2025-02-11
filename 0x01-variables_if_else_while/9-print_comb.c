@@ -1,24 +1,28 @@
-#include<stdio.h>
+#include <stdio.h>
+
 /**
- * main - prints all possible combinations of single-digit numbers.
- * Numbers must be separated by ,, followed by a space
- * followed by a new line.
- * Return: 0 (success)
-*/
+ * main - Entry point of the program
+ *
+ * Description: Prints single-digit numbers (0-9) separated by 
+ * commas and spaces using `putchar`.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-int i;
-i = 48;
-while (i <= 57)
-{
-	putchar(i);
-	if (i != 57)
+	int i = '0';
+
+	while (i != ('9' + 1))
 	{
-	putchar(',');
-	putchar(' ');
+		putchar(i);
+		if (i != '9')
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		i++;
 	}
-	i++;
-}
-putchar('\n');
-return (0);
+	putchar('\n');
+
+	return (0);
 }
