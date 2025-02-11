@@ -1,1 +1,20 @@
-from 0 to 99 The 00 01 and 01 00 are considered
+## 0x01-variables_if_else_while
+- **Data types and variables in C**
+- Declaring and initializing variables
+- Operators (`+`, `-`, `*`, `/`, `%`)
+- Using `if`, `else if`, and `else` statements
+- `while` loops and iteration
+- **Programs in this directory:**
+  - `0-positive_or_negative.c` - Checks if a number is positive, negative, or zero.
+  - `1-last_digit.c` - Prints the last digit of a randomly generated number.
+  - `2-print_alphabet.c` - Prints the lowercase alphabet using `putchar`.
+  - `3-print_alphabets.c` - Prints the lowercase and uppercase alphabet.
+  - `4-print_alphabt.c` - Prints the lowercase alphabet except for 'q' and 'e'.
+  - `5-print_numbers.c` - Prints numbers from 0 to 9.
+  - `6-print_numberz.c` - Prints numbers from 0 to 9 using `putchar`.
+  - `7-print_tebahpla.c` - Prints the lowercase alphabet in reverse order.
+  - `8-print_base16.c` - Prints all hexadecimal numbers in lowercase.
+  - `9-print_comb.c` - Prints all possible combinations of single-digit numbers.
+  - `100-print_comb3.c` - Prints all possible different combinations of two digits.
+  - `101-print_comb4.c` - Prints all possible different combinations of three digits.
+  - `102-print_comb5.c` - Prints all possible different combinations of two two-digit numbers.
