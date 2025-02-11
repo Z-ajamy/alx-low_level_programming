@@ -1,35 +1,35 @@
-#include<stdio.h>
+#include <stdio.h>
+
 /**
- * main - prints all possible different combinations of three digits.
- * Numbers must be separated by ,, followed by a space
- * The three digits must be different
+ * main - Entry point of the program
  *
- * Return: 0 (success)
-*/
+ * Description: Prints all possible different combinations
+ * of three digits in ascending order using `putchar`.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int i, n, m;
+	int i, j, n;
 
-	for (i = 48; i <= 57; i++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		for (n = 48; n <= 57; n++)
+		for (j = (i + 1); j <= '9'; j++)
 		{
-			for (m = 48; m <= 57; m++)
+			for (n = (j + 1); n <= '9'; n++)
 			{
-				if (m > n && n > i)
-				{
 				putchar(i);
+				putchar(j);
 				putchar(n);
-				putchar(m);
-					if ((m != 57) || (i != 55) || (n != 56))
-					{
+				if (i != '7' || j != '8' || n != '9')
+				{
 					putchar(',');
 					putchar(' ');
-					}
 				}
 			}
 		}
 	}
-putchar('\n');
-return (0);
+	putchar('\n');
+
+	return (0);
 }
