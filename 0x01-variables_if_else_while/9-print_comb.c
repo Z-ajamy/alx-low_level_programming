@@ -3,7 +3,7 @@
 /**
  * main - Entry point of the program
  *
- * Description: Prints single-digit numbers (0-9) separated by 
+ * Description: Prints single-digit numbers (0-9) separated by
  * commas and spaces using `putchar`.
  *
  * Return: Always 0 (Success)
