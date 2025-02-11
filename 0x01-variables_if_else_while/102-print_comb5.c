@@ -27,7 +27,7 @@ int main(void)
 		{
 			for (n = i; n <= '9'; n++)
 			{
-				for (m = j; m <= '9'; m++)
+				for (m = (j + 1); m <= '9'; m++)
 				{
 					if (i == n && j == m)
 					{
