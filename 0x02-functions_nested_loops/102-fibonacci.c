@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints the first 50 Fibonacci numbers.
+ * main - Prints the first 50 Fibonacci numbers, By starting with 1 and 2.
  *
  * Return: Always 0 (Success).
  */
@@ -10,22 +10,19 @@ int main(void)
 {
 	unsigned long int i, a = 0, b = 1, res = 0;
 
-	for (i = 1; i <= 49; i++)
+	for (i = 1; i <= 50; i++)
 	{
-		printf("%ld, ", res);
-
-		if (i % 2)
-		{
-			a = res;
-		}
-		else
-		{
-			b = res;
-		}
-
 		res = a + b;
+		a = b;
+		b = res;
+		printf("%ld", res);
+
+		if (i != 50)
+		{
+			printf(", ");
+		}
 	}
-	printf("%ld\n", res);
+	printf("\n");
 
 	return (0);
 }
