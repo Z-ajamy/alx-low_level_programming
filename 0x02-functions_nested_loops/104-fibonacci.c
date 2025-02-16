@@ -1,28 +1,15 @@
-#include "main.h"
 #include <stdio.h>
 
-/**
- * main - Prints the first 50 Fibonacci numbers, By starting with 1 and 2.
- *
- * Return: Always 0 (Success).
- */
 int main(void)
 {
-	unsigned long int i, a = 1, b = 0, res = 0;
-
-	for (i = 1; i <= 91; i++)
-	{
-		res = a + b;
-		a = b;
-		b = res;
-		printf("%ld", res);
-
-		if (i != 50)
-		{
-			printf(", ");
-		}
-	}
-	printf("\n");
-
-	return (0);
+    printf("Size of char: %zu bytes\n", sizeof(char));
+    printf("Size of short: %zu bytes\n", sizeof(short));
+    printf("Size of int: %zu bytes\n", sizeof(int));
+    printf("Size of long: %zu bytes\n", sizeof(long));
+    printf("Size of long long: %zu bytes\n", sizeof(long long));
+    printf("Size of float: %zu bytes\n", sizeof(float));
+    printf("Size of double: %zu bytes\n", sizeof(double));
+    printf("Size of long double: %zu bytes\n", sizeof(long double));
+    
+    return 0;
 }
