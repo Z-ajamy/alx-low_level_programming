@@ -1,31 +1,35 @@
 #include <stdio.h>
-/**
- * main - FizzBuzz test
- * Return : 0 (SUCCESS)
-*/
-int main(void)
-{
-	int i;
 
-	for (i = 1; i < 100; i++)
+/**
+ * main - Prints the numbers from 1 to 100 with FizzBuzz rules.
+ *
+ * Return: Always 0 (Success).
+ */
+
+int main(){
+	int i;
+	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 != 0)
+		if (!(i % 3))
 		{
-			printf("%s ", "Fizz");
+			printf("Fizz");
+			if (!(i % 5))
+			{
+				printf("Buzz");
+			}
 		}
-		else if (i % 5 == 0 && i % 3 != 0)
+		else if (!(i % 5))
 		{
-			printf("%s ", "Buzz");
+			printf("Buzz");
 		}
-		else if (i % 5 == 0 && i % 3 == 0)
+		else
+			printf("%d", i);
+
+		if (i < 100)
 		{
-			printf("%s ", "FizzBuzz");
-		}
-		else if (i % 5 != 0 && i % 3 != 0)
-		{
-			printf("%i ", i);
+			printf(" ");
 		}
 	}
-	printf("Buzz\n");
-	return (0);
+	printf("\n");
+	return 0;
 }
