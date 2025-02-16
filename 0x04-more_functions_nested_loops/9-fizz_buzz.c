@@ -6,8 +6,10 @@
  * Return: Always 0 (Success).
  */
 
-int main(){
+int main(void)
+{
 	int i;
+
 	for (i = 1; i <= 100; i++)
 	{
 		if (!(i % 3))
@@ -31,5 +33,5 @@ int main(){
 		}
 	}
 	printf("\n");
-	return 0;
+	return (0);
 }
