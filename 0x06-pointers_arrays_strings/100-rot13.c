@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * rot13 - Encodes a string using ROT13.
+ * @s: The string to be encoded.
+ *
+ * Return: The encoded string.
+ */
+
 char *rot13(char *s)
 {
 	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
