@@ -8,29 +8,16 @@
  * Return: always void
  */
 
-	void puts_half(char *str)
+void puts_half(char *str)
 {
-	int i, n, j;
+	int i, n;
 
 	for (i = 0; str[i] != '\0'; i++)
-	{
-	}
-	if (i % 2 == 0)
-	{
-		n = i / 2;
-		for (j = n; j < i; j++)
-		{
-			_putchar(str[j]);
-		}
-	}
+		continue;
 
-	else if (i % 2 == 1)
+	for (n = i / 2; n < i; n++)
 	{
-		n = ((i - 1) / 2) + 1;
-		for (j = n; j < i; j++)
-		{
-			_putchar(str[j]);
-		}
+		_putchar(str[n]);
 	}
 	_putchar('\n');
 }
