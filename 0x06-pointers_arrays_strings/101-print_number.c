@@ -11,8 +11,15 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
+		if (n < -2147483647)
+		{
+			_putchar('2');
+			n = n % 1000000000; 
+		}
 		n *= -1;
 	}
+	
+	
 	m = n;
 
 	while (n /= 10)
