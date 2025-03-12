@@ -1,56 +1,43 @@
 #include "main.h"
-
-/**
- * print_number - Prints an integer using _putchar.
- * @n: The integer to be printed.
- */
 void print_number(int n)
 {
-	int len = 0, m, i, a;
+    int len = 0, i, a;
+	unsigned int x, m;
+    if (n < 0)
+    {
+        _putchar('-');
+        m = n * -1;
+    }
+	else
+    	m = n;
+	x = m;
+    while (m /= 10)
 
-	if (n < 0)
-	{
-		_putchar('-');
-		if (n < -2147483647)
-		{
-			_putchar('2');
-			n = n % 1000000000; 
-		}
-		n *= -1;
-	}
-	
-	
-	m = n;
+        len++;
+    len++;
 
-	while (n /= 10)
-		len++;
-	len++;
-
-	for (i = len; i > 0; i--)
-	{
-		a = m / _pow(10, i - 1);
-		a %= 10;
-		_putchar(a + '0');
-	}
+    for (i = len; i > 0; i--)
+    {
+        a = x / _pow(10, i - 1);
+        a %= 10;
+        _putchar(a + '0');
+    }
 }
 
-/**
- * _pow - Computes the power of a number.
- * @a: The base number.
- * @b: The exponent.
- *
- * Return: The result of a raised to the power of b.
- */
 int _pow(int a, int b)
 {
-	int i, temp;
+    int temp = 1;
+    if (b == 0)
+        return 1;
 
-	if (b == 0)
-		return (1);
-	temp = 1;
-	for (i = 0; i < b; i++)
+		while (b > 0)
 	{
-		temp *= a;
+		if (b % 2 == 1)
+			temp *= a;
+
+		a *= a;
+		b /= 2;
 	}
-	return (temp);
+	
+    return temp;
 }
