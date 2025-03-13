@@ -1,18 +1,24 @@
 #include "main.h"
 
 /**
- * infinite_add - Adds two large numbers represented as strings.
- * @n1: First number string.
- * @n2: Second number string.
- * @r: Buffer to store result.
- * @size_r: Buffer size.
+ * _reverse_array - Reverses the content of an array of characters.
+ * @a: The array to be reversed.
+ * @n: The number of elements in the array.
+ */
+void _reverse_array(char *a, int n);
+
+/**
+ * infinite_add - Adds two numbers stored as strings.
+ * @n1: The first number as a string.
+ * @n2: The second number as a string.
+ * @r: The buffer to store the result.
+ * @size_r: The size of the buffer.
  *
- * Return: Pointer to the result, or 0 if it cannot fit in buffer.
+ * Return: A pointer to the result or 0 if the result cannot fit in r.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = 0, len2 = 0, carry = 0, sum, i = 0, j;
-	char temp;
+	int len1 = 0, len2 = 0, carry = 0, sum, i = 0;
 
 	while (n1[len1] != '\0')
 		len1++;
@@ -47,11 +53,24 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	r[i] = '\0';
 
-	for (j = 0; j < i / 2; j++)
-	{
-		temp = r[j];
-		r[j] = r[i - j - 1];
-		r[i - j - 1] = temp;
-	}
+	_reverse_array(r, i);
 	return (r);
+}
+
+/**
+ * _reverse_array - Reverses the content of an array of characters.
+ * @a: The array to be reversed.
+ * @n: The number of elements in the array.
+ */
+void _reverse_array(char *a, int n)
+{
+	int m, i, p;
+
+	i = n - 1;
+	for (m = 0; m < i; m++, i--)
+	{
+		p = a[m];
+		a[m] = a[i];
+		a[i] = p;
+	}
 }
