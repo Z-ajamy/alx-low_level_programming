@@ -9,18 +9,17 @@
 int _sqr_recursion(int n, int i);
 int _sqrt_recursion(int n)
 {
-    int i = 0;
+	int i = 0;
 
-    if (n == 0)
-    {
-        return (0);
-    }
-    if (n < 0)
-    {
-        return (-1);
-    }
-    
-    return (_sqr_recursion(n, i));
+	if (n == 0)
+	{
+		return (0);
+	}
+	if (n < 0)
+	{
+		return (-1);
+	}	
+	return (_sqr_recursion(n, i));
 }
 
 /**
@@ -32,15 +31,14 @@ int _sqrt_recursion(int n)
  */
 int _sqr_recursion(int n, int i)
 {
-    i++;
-    if (i * i == n)
-    {
-        return (i);
-    }
-    else if (i * i > n)
-    {
-        return (-1);
-    }
-    
-    return (_sqr_recursion(n, i));
+	i++;
+	if (i * i == n)
+	{
+		return (i);
+	}
+	else if (i * i > n)
+	{
+		return (-1);
+	}
+	return (_sqr_recursion(n, i));
 }
