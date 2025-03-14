@@ -6,32 +6,41 @@
  *
  * Return: The natural square root of n, or -1 if n has no natural square root.
  */
+int _sqr_recursion(int n, int i);
 int _sqrt_recursion(int n)
 {
-	static int i = 1;
+    int i = 0;
 
-	if (n < 0)
-	{
-		i = 1;
-		return (-1);
-	}
-	if (n == 0)
-	{
-		i = 1;
-		return (0);
-	}
-	else if (i * i == n)
-	{
-		int res = i;
-		i = 1;
-		return (res);
-	}
-	else if (i * i > n)
-	{
-		i = 1;
-		return (-1);
-	}
-	
-	i++;
-	return (_sqrt_recursion(n));
+    if (n == 0)
+    {
+        return (0);
+    }
+    if (n < 0)
+    {
+        return (-1);
+    }
+    
+    return (_sqr_recursion(n, i));
+}
+
+/**
+ * _sqr_recursion - Helper function to find the square root.
+ * @n: The number to find the square root of.
+ * @i: The current test value.
+ *
+ * Return: The square root of n, or -1 if no natural square root exists.
+ */
+int _sqr_recursion(int n, int i)
+{
+    i++;
+    if (i * i == n)
+    {
+        return (i);
+    }
+    else if (i * i > n)
+    {
+        return (-1);
+    }
+    
+    return (_sqr_recursion(n, i));
 }
