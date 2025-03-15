@@ -13,12 +13,12 @@
  * Description: This structure holds basic information
  * about a dog, including its name, age, and owner.
  */
-struct dog
+typedef struct dog
 {
     char *name;
     char *owner;
     double age;
-};
+} dog_t;
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
