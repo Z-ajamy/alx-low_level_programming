@@ -1,8 +1,8 @@
 #ifndef DOG_H
 #define DOG_H
-#include<stdlib.h>
-#include <stdio.h>
 
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct dog - A structure representing a dog.
@@ -17,11 +17,11 @@ typedef struct dog
 {
     char *name;
     char *owner;
-    double age;
+    float age; /* Changed from double to float to maintain consistency */
 } dog_t;
 
+/* Function prototypes */
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
-
 
 #endif /* DOG_H */
