@@ -56,7 +56,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	ptr->age = age;
-
 	if (name)
 	{
 		sptr1 = (char *) malloc(sizeof(char) * (counrstr(name) + 1));
@@ -71,7 +70,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 			return (NULL);
 		}
 	}
-
 	if (owner)
 	{
 		sptr2 = (char *) malloc(sizeof(char) * (counrstr(owner) + 1));
