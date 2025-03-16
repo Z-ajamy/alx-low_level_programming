@@ -1,6 +1,6 @@
 #include "dog.h"
 int counrstr(char *str);
-
+void _strcpy(char *s, char *str);
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -11,28 +11,21 @@ dog_t *new_dog(char *name, float age, char *owner)
     ptr->age = age;
     if (!name)
     {
-        char *pnam = (char *) malloc(sizeof(char) * counrstr(name));
-        if (!pstr)
+        char *sptr1 = (char *) malloc(sizeof(char) * (counrstr(name) + 1));
+        if (!sptr1)
         {
-            ptr->name = pstr;
+            _strcpy(name, sptr1);
+            ptr->name = sptr1;
         }
-        else
-        {
-            free(pstr);
-        }
-        
     }
     
     if (!owner)
     {
-        char *pown = (char *) malloc(sizeof(char) * counrstr(owner));
-        if (!pstr)
+        char *sptr2 = (char *) malloc(sizeof(char) * counrstr(owner) + 1);
+        if (!sptr2)
         {
-            pown->owner = owner;
-        }
-        else
-        {
-            free(pown);
+            _strcpy(owner, sptr2);
+            ptr->owner = sptr2;
         }
     }
     return ptr;
@@ -49,4 +42,16 @@ int counrstr(char *str)
     for (i = 0; str[i] != 0; i++)
         continue;
     return i;
+}
+
+void _strcpy(char *s, char *str)
+{
+    int i;
+    if (!s || !str)
+        return;
+    for (i = 0; s[i] != 0; i++)
+        {
+            str[i] = s[i];
+        }
+        str[i] = '\0';
 }
