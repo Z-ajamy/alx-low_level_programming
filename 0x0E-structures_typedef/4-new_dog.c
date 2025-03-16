@@ -4,6 +4,8 @@ void _strcpy(char *s, char *str);
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+    char *sptr1, *sptr2;
+
     dog_t *ptr = (dog_t *) malloc(sizeof(dog_t));
     if (!ptr)
         return NULL;
@@ -11,21 +13,36 @@ dog_t *new_dog(char *name, float age, char *owner)
     ptr->age = age;
     if (!name)
     {
-        char *sptr1 = (char *) malloc(sizeof(char) * (counrstr(name) + 1));
+        sptr1 = (char *) malloc(sizeof(char) * (counrstr(name) + 1));
         if (!sptr1)
         {
             _strcpy(name, sptr1);
             ptr->name = sptr1;
         }
+        else
+        {
+            free(ptr);
+            return NULL;
+        }
+        
     }
     
     if (!owner)
     {
-        char *sptr2 = (char *) malloc(sizeof(char) * counrstr(owner) + 1);
+        sptr2 = (char *) malloc(sizeof(char) * counrstr(owner) + 1);
         if (!sptr2)
         {
             _strcpy(owner, sptr2);
             ptr->owner = sptr2;
+        }
+        else
+        {
+            free(ptr);
+            if (!name)
+    {
+            free(sptr1);
+    }
+            return NULL;
         }
     }
     return ptr;
