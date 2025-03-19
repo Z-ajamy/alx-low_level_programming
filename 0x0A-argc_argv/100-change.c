@@ -1,23 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 int is_num(char *str);
-
+int is_pos(char *str);
 
 
 int main(int argc, char *argv[])
 {
-    int a, i = 0;
+    unsigned int a, i = 0;
     if (argc != 2 || !is_num(argv[1]))
     {
         printf("Error\n");
         exit(1);
     }
-    a = atoi(argv[1]);
-    if (a <= 0)
+    if (!is_pos(argv[1]))
     {
         printf("0\n");
         exit(1);
     }
+    a = atoi(argv[1]);
     if (a >= 25)
     {
         i += a/25;
@@ -63,6 +63,15 @@ int is_num(char *str)
         {
             return (0);
         }
+    }
+    return (1);
+}
+
+int is_pos(char *str)
+{
+    if (str[1] == '-')
+    {
+        return (0);
     }
     return (1);
 }
