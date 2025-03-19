@@ -1,44 +1,82 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+int is_num(char *str);
+int is_pos(char *str);
 
-/**
- * main - prints the minimum number of coins to
- * make change for an amount of money
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: 0 (Success), 1 (Error)
- */
+
 int main(int argc, char *argv[])
 {
-	int num, j, result;
-	int coins[] = {25, 10, 5, 2, 1};
+    unsigned int a, i = 0;
+    if (argc != 2 || !is_num(argv[1]))
+    {
+        printf("Error\n");
+        exit(1);
+    }
+    if (!is_pos(argv[1]))
+    {
+        printf("0\n");
+        exit(1);
+    }
+    a = atoi(argv[1]);
+    if (a >= 25)
+    {
+        i += a/25;
+        a %= 25;           
+    }
+     if (a >= 10)
+    {
+        i += a/10;
+        a %= 10;
+    }
+     if (a >= 5)
+    {
+        i += a/5;
+        a %= 5;
+    }
+    if (a >= 2)
+    {
+        i += a/2;
+        a %= 2;
+    }
+    if (a >= 1)
+    {
+        i += a/1;
+        a %= 1;
+    }
+    
+        
+    printf("%d\n", i);
+    return 0;
+    
+    
+    
+}
 
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
 
-	num = atoi(argv[1]);
-	result = 0;
+int is_num(char *str)
+{
+    int i;
 
-	if (num < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[0] == '-')
+            {
+                continue;
+            }
+        if (str[i] < '0' || str[i] > '9')
+        {
+            
+            return (0);
+        }
+    }
+    return (1);
+}
 
-	for (j = 0; j < 5 && num >= 0; j++)
-	{
-		while (num >= coins[j])
-		{
-			result++;
-			num -= coins[j];
-		}
-	}
-
-	printf("%d\n", result);
-	return (0);
+int is_pos(char *str)
+{
+    if (str[0] == '-')
+    {
+        return (0);
+    }
+    return (1);
 }
