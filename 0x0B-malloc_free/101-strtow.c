@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * arr_of_num_letrs - Calculates the length of each word in the string
