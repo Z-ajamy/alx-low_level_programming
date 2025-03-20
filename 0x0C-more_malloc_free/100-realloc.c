@@ -15,9 +15,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
         return ptr;
     p = malloc(new_size);
     if (!p)
-    {
         return NULL;
+    if (!ptr)
+    {
+        return p;
     }
+    
     if (old_size > new_size)
     {
         min = new_size;
