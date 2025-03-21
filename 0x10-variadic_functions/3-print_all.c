@@ -12,7 +12,6 @@ void print_all(const char * const format, ...)
     if (!format)
     {
         printf("\n");
-        va_end(list);
         return;
     }
 
