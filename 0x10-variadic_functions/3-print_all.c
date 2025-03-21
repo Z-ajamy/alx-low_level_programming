@@ -7,13 +7,13 @@ void print_all(const char * const format, ...)
     char *str = "";
     va_list list;
 
-    va_start(list, format);
 
     if (!format)
     {
         printf("\n");
         return;
     }
+    va_start(list, format);
 
     while (format[i])
     {
