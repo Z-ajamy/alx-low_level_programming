@@ -52,3 +52,4 @@ To execute a compiled file:
 
 ## Author
 This project is part of the ALX Software Engineering curriculum, reinforcing key C programming concepts.
+
