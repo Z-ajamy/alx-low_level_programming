@@ -1,10 +1,17 @@
-#include<stdlib.h>
-#include<stdarg.h>
-#include<unistd.h>
-#include<fcntl.h>
-#include<stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
 
-int main(int argc, char* argv[])
+/**
+ * main - Copies the content of a file to another file
+ * @argc: Argument count
+ * @argv: Argument vector
+ *
+ * Return: 0 on success, exits with various error codes on failure
+ */
+int main(int argc, char *argv[])
 {
     char *ptr;
     int fd1, fd2, i, j;
@@ -14,7 +21,8 @@ int main(int argc, char* argv[])
         dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
         exit(97);
     }
-    ptr = (char*)malloc(sizeof(char) * 1024);
+    
+    ptr = (char *)malloc(sizeof(char) * 1024);
     if (!ptr)
     {
         dprintf(STDERR_FILENO, "Error: Can't allocate memory\n");
@@ -37,6 +45,7 @@ int main(int argc, char* argv[])
         dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
         exit(99);
     }
+    
     i = 1;
     while (i > 0)
     {
@@ -49,6 +58,7 @@ int main(int argc, char* argv[])
             dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
             exit(98);
         }
+        
         j = write(fd2, ptr, i);
         if (j == -1)
         {
@@ -58,8 +68,8 @@ int main(int argc, char* argv[])
             dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
             exit(99);
         }
-
     }
+    
     free(ptr);
     i = close(fd1);
     j = close(fd2);
@@ -74,5 +84,6 @@ int main(int argc, char* argv[])
         dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
         exit(100);
     }
-    return 0;
+    
+    return (0);
 }
