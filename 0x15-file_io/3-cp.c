@@ -41,7 +41,6 @@ int main(int argc, char* argv[])
     while (i > 0)
     {
         i = read(fd1, ptr, 1024);
-        j = write(fd2, ptr, i);
         if (i == -1)
         {
             free(ptr);
@@ -50,7 +49,7 @@ int main(int argc, char* argv[])
             dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
             exit(98);
         }
-
+        j = write(fd2, ptr, i);
         if (j == -1)
         {
             free(ptr);
