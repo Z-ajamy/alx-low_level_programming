@@ -23,8 +23,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     {
         if (strcmp(curr->key, item->key) == 0)
         {
-            const char *p = curr->value;
-            curr->value = (const char *)malloc(sizeof(char) * strlen(value) + 1);
+            char *p = curr->value;
+            curr->value = (char *)malloc(sizeof(char) * strlen(value) + 1);
             if (!(curr->value))
             {
                 free_item(item);
