@@ -23,7 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     {
         if (strcmp(curr->key, item->key) == 0)
         {
-            strcpy (curr->value, key);
+            strcpy (curr->value, value);
             free_item(item);
             return 1;
         }
