@@ -1,26 +1,13 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_create - Creates a new hash table
+ * key_index - Returns the index of a key in a hash table
+ * @key: The key to compute the index for
  * @size: The size of the hash table
  *
- * Return: A pointer to the newly created hash table, or NULL on failure
+ * Return: The index where the key should be stored
  */
-hash_table_t *hash_table_create(unsigned long int size)
+unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-    hash_table_t *table = (hash_table_t *)malloc(sizeof(hash_table_t));
-    
-    if (!table)
-        return (NULL);
-    
-    table->size = size;
-    table->array = (hash_node_t **)calloc(size, sizeof(hash_node_t *));
-    
-    if (!table->array)
-    {
-        free(table);
-        return (NULL);
-    }
-    
-    return (table);
+    return (hash_djb2(key) % size);
 }
