@@ -1,80 +1,95 @@
-#include"hash_tables.h"
+#include "hash_tables.h"
+#include <string.h>
+#include <stdlib.h>
 
+/**
+ * hash_table_set - Adds an element to the hash table.
+ * @ht: The hash table to add or update the key/value in.
+ * @key: The key (cannot be an empty string).
+ * @value: The value associated with the key (must be duplicated).
+ *
+ * Return: 1 if successful, 0 otherwise.
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    int index = key_index((const unsigned char *)key, ht->size);
-    hash_node_t *curr;
-    hash_node_t *item;
+    unsigned long int index;
+    hash_node_t *curr, *new_node;
+    char *new_value;
 
-    if (!ht || !key)
-        return 0;
+    /* التحقق من صحة المدخلات */
+    if (!ht || !key || strlen(key) == 0 || !value)
+        return (0);
 
-    item = creat_item(key, value);
-    if (!item)
-        return 0;
-
+    /* حساب الفهرس */
+    index = key_index((const unsigned char *)key, ht->size);
     curr = ht->array[index];
-    if (!curr)
+
+    /* البحث عن المفتاح في القائمة المرتبطة */
+    while (curr)
     {
-        ht->array[index] = item;
-        return 1;
-    }
-    else
-    {
-        if (strcmp(curr->key, item->key) == 0)
+        if (strcmp(curr->key, key) == 0)
         {
-            strcpy (curr->value, value);
-            free_item(item);
-            return 1;
+            /* تحديث القيمة */
+            new_value = strdup(value);
+            if (!new_value)
+                return (0);
+            free(curr->value);
+            curr->value = new_value;
+            return (1);
         }
-        else
-        {
-            hash_node_t *ptr = ht->array[index];
-            ht->array[index] = item;
-            item->next = ptr;
-            return 1;
-        }
+        curr = curr->next;
     }
+
+    /* المفتاح غير موجود، إنشاء عنصر جديد */
+    new_node = create_item(key, value);
+    if (!new_node)
+        return (0);
+
+    /* إدراج العقدة الجديدة في بداية القائمة */
+    new_node->next = ht->array[index];
+    ht->array[index] = new_node;
+
+    return (1);
 }
 
-hash_node_t *creat_item(const char *key, const char *val)
+/**
+ * create_item - Creates a new hash table node.
+ * @key: The key to store (must be duplicated).
+ * @val: The value associated with the key.
+ *
+ * Return: Pointer to the new node, or NULL on failure.
+ */
+hash_node_t *create_item(const char *key, const char *val)
 {
-    long unsigned int i;
-    hash_node_t *item = NULL;
+    hash_node_t *item;
 
     item = (hash_node_t *)malloc(sizeof(hash_node_t));
     if (!item)
-        return NULL;
-    
-    item->next = NULL;
-    item ->key = (char *)malloc((sizeof(char) * strlen(key)) + 1);
-    if (!(item->key))
+        return (NULL);
+
+    item->key = strdup(key);
+    if (!item->key)
     {
         free(item);
-        return NULL;
+        return (NULL);
     }
-    for (i = 0; i < ((sizeof(char) * strlen(key)) + 1); i++)
-    {
-        item->key[i] = 0;
-    }
-    
-    item->value = (char *)malloc(sizeof(char) * strlen(val) + 1);
-    if (!(item->value))
+
+    item->value = strdup(val);
+    if (!item->value)
     {
         free(item->key);
         free(item);
-        return NULL;
+        return (NULL);
     }
-    for (i = 0; i < (sizeof(char) * strlen(val) + 1); i++)
-    {
-        item->value[i] = 0;
-    }
-    strcpy(item->key, key);
-    strcpy(item->value, val);
 
-    return item;
+    item->next = NULL;
+    return (item);
 }
 
+/**
+ * free_item - Frees a hash table node.
+ * @item: The node to free.
+ */
 void free_item(hash_node_t *item)
 {
     if (!item)
