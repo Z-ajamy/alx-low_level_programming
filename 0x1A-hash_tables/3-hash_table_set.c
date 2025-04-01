@@ -2,14 +2,15 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    unsigned long int index = key_index((const unsigned char *)key, ht->size);
+    unsigned long int index;
     hash_node_t *curr;
     hash_node_t *item;
 
-    if (!ht || !key)
+    if (!ht || !key || strlen(key) == 0)
         return 0;
 
-    item = creat_item(key, value);
+    index = key_index((const unsigned char *)key, ht->size);
+    item = create_item(key, value);
     if (!item)
         return 0;
 
@@ -23,15 +24,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     {
         if (strcmp(curr->key, item->key) == 0)
         {
-            char *p = curr->value;
-            curr->value = (char *)malloc(sizeof(char) * strlen(value) + 1);
-            if (!(curr->value))
+            char *p;
+            p = (char *)malloc(sizeof(char) * strlen(value) + 1);
+            if (!p)
             {
                 free_item(item);
                 return 0;
             }
-            strcpy (curr->value, value);
-            free(p);
+            strcpy (p, value);
+            free(curr->value);
+            curr->value = p;
             free_item(item);
             return 1;
         }
@@ -45,7 +47,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     }
 }
 
-hash_node_t *creat_item(const char *key, const char *val)
+hash_node_t *create_item(const char *key, const char *val)
 {
     long unsigned int i;
     hash_node_t *item = NULL;
@@ -90,4 +92,5 @@ void free_item(hash_node_t *item)
     free(item->key);
     free(item->value);
     free(item);
+    item = NULL;
 }
