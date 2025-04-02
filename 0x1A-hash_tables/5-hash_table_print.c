@@ -18,7 +18,7 @@ void hash_table_print(const hash_table_t *ht)
                 if (!flag)
                     printf(", ");
                 flag = 0;
-                printf("\'%s\' : \'%s\'", ptr->key, ptr->value);
+                printf("\'%s\': \'%s\'", ptr->key, ptr->value);
             
             ptr = ptr->next;
         }
