@@ -13,8 +13,7 @@ void hash_table_print(const hash_table_t *ht)
         ptr = ht->array[i];
         while (ptr)
         {
-            if (ptr->key && ptr->value)
-            {
+            
                 if (!flag)
                     printf(", ");
                 if (flag)
@@ -23,7 +22,7 @@ void hash_table_print(const hash_table_t *ht)
                     flag = 0;
                 }
                 printf("\'%s\' : \'%s\'", ptr->key, ptr->value);
-            }
+            
             ptr = ptr->next;
         }
     }
