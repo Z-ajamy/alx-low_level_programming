@@ -3,7 +3,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
     hash_node_t *ptr;
-    long unsigned int i; 
+    unsigned long int i; 
     char flag = 1;
 
     if (!ht)
@@ -13,7 +13,7 @@ void hash_table_print(const hash_table_t *ht)
         ptr = ht->array[i];
         while (ptr)
         {
-            if (ptr->key)
+            if (ptr->key && ptr->value)
             {
                 if (!flag)
                     printf(", ");
