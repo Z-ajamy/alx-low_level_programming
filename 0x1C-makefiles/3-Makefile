@@ -1,0 +1,25 @@
+.PHONY: all 
+
+CC = gcc
+SRC = school.c main.c
+OBJ := $(patsubst %.c, %.o, ${SRC})
+NAME = school
+RM = rm
+
+%.o: %.c
+	gcc -c $< -o %@
+
+
+
+all: ${OBJ}
+	${CC} -o ${NAME} $(OBJ)
+
+clean:
+	${RM} *~ ${NAME}
+
+oclean:
+	${RM} ${OBJ}
+
+fclean: oclean clean
+
+re: fclean all
