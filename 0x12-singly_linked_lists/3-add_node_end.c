@@ -8,13 +8,11 @@ list_t *add_node_end(list_t **head, const char *str)
     char* s;
 
     ptr = *head;
-    if (ptr)
+    while (ptr && ptr->next)
     {
-        while (ptr->next)
-        {
-            ptr = ptr->next;
-        }
+        ptr = ptr->next;
     }
+    
     
     p = (list_t*)malloc(sizeof(list_t));
     if (!p)
