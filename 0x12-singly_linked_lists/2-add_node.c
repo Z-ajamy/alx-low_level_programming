@@ -14,23 +14,23 @@ list_t *add_node(list_t **head, const char *str)
     }
     if (!str)
     {
-        ptr->str = NULL;
+        s = NULL;
     }
     else
     {
         count = len(str);
         s = (char*)malloc(sizeof(char) * (count + 1));
-        if (!str)
+        if (!s)
         {
             free(ptr);
             return NULL;
         }
+        for (i = 0; i <= count; i++)
+        {
+            s[i] = str[i];
+        }
     }
     ptr->len = count;
-    for (i = 0; i <= count; i++)
-    {
-        s[i] = str[i];
-    }
     ptr->str = s;
     ptr->next = *head;
     *head = ptr;
