@@ -35,11 +35,11 @@ size_t print_list(const list_t *h)
 
         if (!(h->str))
         {
-            printf("[%lu] %s\n", _strlen(h->str), "(nil)");
+            printf("[%lu] %s\n", i, "(nil)");
         }
         else
         {
-            printf("[%lu] %s\n", _strlen(h->str), h->str);
+            printf("[%lu] %s\n", i, h->str);
         }
 
         size++;
