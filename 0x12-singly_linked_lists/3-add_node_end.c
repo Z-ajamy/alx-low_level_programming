@@ -23,7 +23,7 @@ list_t *add_node_end(list_t **head, const char *str)
     new->len = len;
     new->next = NULL;
 
-    new->str = (char *)malloc(sizeof(char) * len);
+    new->str = (char *)malloc(sizeof(char) * (len + 1));
     if (!(new->str))
     {
         free(new);
