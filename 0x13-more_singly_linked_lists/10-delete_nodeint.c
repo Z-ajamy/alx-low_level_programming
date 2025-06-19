@@ -27,13 +27,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
     while (i < index && ptr)
     {
-        i++;
         ptr = ptr->next;
 
         if ((i + 1) < index)
-        {
             p = p->next;
-        }
+        i++;
     }
 
     if (i < index || !ptr)
